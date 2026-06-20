@@ -1,86 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CarrotBox</title>
+    <meta charset="UTF-8">
+    <title>Display</title>
 
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #1e1e1e; /* charcoal */
-      overflow: hidden;
-    }
+    <link rel="stylesheet" href="styles.css">
 
-    /* Subtle animated charcoal background */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(
-        circle at 20% 20%,
-        #2a2a2a,
-        #1e1e1e 60%
-      );
-      animation: drift 20s ease-in-out infinite alternate;
-      z-index: -1;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
 
-    @keyframes drift {
-      0% {
-        transform: scale(1) translate(0, 0);
-      }
-      100% {
-        transform: scale(1.2) translate(-5%, -5%);
-      }
-    }
-
-    .container {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .carrot {
-      width: 160px;
-      margin-bottom: 24px;
-      animation: float 4s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    h1 {
-      font-size: clamp(4rem, 10vw, 8rem);
-      margin: 0;
-      line-height: 1;
-      background: linear-gradient(90deg, #ff7a00, #ffb347);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    h2 {
-      margin-top: 16px;
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      font-weight: 400;
-      color: #ffcc99; /* soft pastel orange */
-    }
-  </style>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-  <div class="container">
-    <img src="/carrot.png" alt="Carrot" class="carrot" />
-    <h1>Hi</h1>
-    <h2>Welcome To CarrotBox.net!</h2>
-  </div>
+    <div class="container">
+        <div id="question">Waiting for question...</div>
+        <ul id="player-scores"></ul>
+    </div>
+
+    <div id="correct-screen" class="overlay">CORRECT</div>
+    <div id="wrong-screen" class="overlay">WRONG</div>
 </body>
 </html>

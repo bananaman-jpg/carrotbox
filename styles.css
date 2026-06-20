@@ -1,0 +1,117 @@
+/* BACKGROUND (customize this) */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("background.jpg") center/cover no-repeat;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* dark overlay so text is readable */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+}
+
+/* MAIN BOX */
+.container {
+    position: relative;
+    z-index: 2;
+
+    width: min(700px, 90vw);
+    padding: 20px;
+
+    background: rgba(20,20,20,0.9);
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    text-align: center;
+}
+
+/* QUESTION */
+#question {
+    font-family: "Cherry Bomb One", system-ui, sans-serif;
+    font-size: 50px;
+    color: #00ff88;
+}
+
+/* SCORES */
+#player-scores {
+    list-style: none;
+    padding: 0;
+}
+
+#player-scores li {
+    background: #09ff00;
+    margin: 6px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* INPUT */
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* BUTTONS */
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    background: #00ff88;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #00cc6a;
+}
+
+/* HOST PLAYERS */
+#players div {
+    display: flex;
+    justify-content: space-between;
+    background: #808080;
+    padding: 10px;
+    border-radius: 10px;
+}
+.player-name {
+    color: #f0f0f0;
+    font-family: "Roboto Condensed", system-ui, sans-serif;
+    font-size: 30px;
+}
+
+/* OVERLAYS */
+.overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 80px;
+    font-weight: bold;
+
+    z-index: 999;
+}
+
+#correct-screen {
+    background: rgba(0,255,0,0.9);
+}
+
+#wrong-screen {
+    background: rgba(255,0,0,0.9);
+}
